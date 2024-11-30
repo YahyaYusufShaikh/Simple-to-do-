@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To DO APP</title>
+</head>
+<body>
+    <div class = "container">
+        <h2>A simple to do app</h2>
+        <form action="/addtask" method="post">
+            <input type="text" name="newtask" placeholder="add new task">
+            <% for( var i = 0; i < task.length; i++){ %>
+                <li><input type="checkbox" name="check" value="<%= task[i] %>" /> <%= task[i] %> </li>
+            <% } %>
+            <center><button class = "button-63">Add Task</button></center>
+            <h2>Added Task</h2> 
+            <center><button class = "button-63" formaction="/removetask" type="submit">Remove</button></center>
+        </form>
+        <h2>Completed Task</h2>
+        <% for(var i = 0; i < complete.length; i++){ %>
+            <li><input type="checkbox" checked><%=complete[i]%></li>
+            <%}%>
+    </div>
+</body>
+</html>
